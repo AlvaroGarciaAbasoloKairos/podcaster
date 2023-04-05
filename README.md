@@ -1,17 +1,40 @@
 # Podcaster
+
 A micro application for Music Podcasts
 
-## Development Mode
-To run the application in the development mode, execute the command `npm start` in your terminal. This will initialize the app and open it in your default browser at http://localhost:3000.
+## Getting Started
 
-## Production Mode
-To run the application in production mode, it is necessary to generate a production build of the app. Please follow the steps below to create the production build:
+Run dev server:
 
-1. Run the command npm build in your terminal to create a production build of the app, which will be located in the build folder.
+```bash
+npm run dev
+```
 
-2. Install a simple HTTP server such as serve by running the command npm install -g serve.
+Open [http://localhost:3000](http://localhost:3000)
 
-3. Run the serve command with the build directory as the argument and specify the port number as 5000 by running the command: `serve -s build --port 5000`
+Run tests:
 
-## Tests
-To execute the test suite for the application, run the command `npm test` in your terminal. This will initiate the test runner with the tests results.
+```bash
+npm run test
+```
+
+Run build:
+
+```bash
+npm run build
+```
+
+Format code:
+
+```bash
+npm run format
+```
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 
 type Props = PropsWithChildren<{
@@ -10,7 +10,7 @@ export function HeaderLayout({ loading, children }: Props) {
   return (
     <Root>
       <Header>
-        <Logo to="/">Podcaster</Logo>
+        <LogoLink href="/">Podcaster</LogoLink>
         {loading && <LoadingDot />}
       </Header>
       <Content>{children}</Content>
@@ -44,7 +44,7 @@ const Content = styled.div`
   min-height: 0;
 `;
 
-const Logo = styled(Link)`
+const LogoLink = styled(Link)`
   color: var(--color-primary);
   font-size: 22px;
   font-weight: var(--font-weight-black);

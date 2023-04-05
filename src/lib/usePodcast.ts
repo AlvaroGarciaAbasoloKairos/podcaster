@@ -76,8 +76,8 @@ interface PodcastEpisodeResponse {
   genres: [
     {
       name: string;
-      id: string
-    }
+      id: string;
+    },
   ];
   kind: string;
   previewUrl: string | undefined;
@@ -133,7 +133,10 @@ const usePodcast = ({
       const podcastResponse: PodcastResponse = await resp.json();
       const { results } = podcastResponse;
       const track = results[0] ?? {};
-      const episodes = results.slice(1, results.length) as PodcastEpisodeResponse[];
+      const episodes = results.slice(
+        1,
+        results.length,
+      ) as PodcastEpisodeResponse[];
       const description = episodes.length
         ? await getPodcastDescription(episodes[0].feedUrl)
         : undefined;
@@ -144,16 +147,19 @@ const usePodcast = ({
         collectionId: track.collectionId ?? 0,
         collectionName: track.collectionName,
         description,
-        episodes: episodes.map((episode) => ({
-          id: episode?.trackId ?? '',
-          title: episode?.trackName ?? '',
-          description: episode?.shortDescription
-            ? episode?.shortDescription
-            : episode?.description ?? '',
-          pubDate: episode?.releaseDate ?? '',
-          duration: episode?.trackTimeMillis ?? '',
-          mediaContent: episode?.episodeUrl ?? '',
-        }) as PodcastEpisode),
+        episodes: episodes.map(
+          (episode) =>
+            ({
+              id: episode?.trackId ?? '',
+              title: episode?.trackName ?? '',
+              description: episode?.shortDescription
+                ? episode?.shortDescription
+                : episode?.description ?? '',
+              pubDate: episode?.releaseDate ?? '',
+              duration: episode?.trackTimeMillis ?? '',
+              mediaContent: episode?.episodeUrl ?? '',
+            } as PodcastEpisode),
+        ),
       };
       setPodcast(_podcast);
       localStorage.setItem(

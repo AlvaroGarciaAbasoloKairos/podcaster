@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { removeHtmlTags } from '../../lib/utils';
 import { Podcast } from '../../lib/usePodcast';
-import { Link } from 'react-router-dom';
 import { toPodcastPath } from '../../lib/paths';
+import { removeHtmlTags } from '@/lib/utils';
+import Link from 'next/link';
 
 interface Props {
   podcast: Podcast;
@@ -13,11 +13,19 @@ interface Props {
 export function PodcastCard({ podcast, podcastId }: Props) {
   return (
     <Card>
-      <PodcastLink to={toPodcastPath(podcastId)} style={{ textAlign: 'center' }}>
-        <PodcastImg width={175} height={175} alt="Podcast Cover Art" src={podcast.artworkUrl600} />
+      <PodcastLink
+        href={toPodcastPath(podcastId)}
+        style={{ textAlign: 'center' }}
+      >
+        <PodcastImg
+          width={175}
+          height={175}
+          alt="Podcast Cover Art"
+          src={podcast.artworkUrl600}
+        />
       </PodcastLink>
       <Separator />
-      <PodcastLink to={toPodcastPath(podcastId)}>
+      <PodcastLink href={toPodcastPath(podcastId)}>
         <Title>
           <CollectionName>{podcast.collectionName}</CollectionName>
           <i>by {podcast.artistName}</i>
@@ -26,7 +34,9 @@ export function PodcastCard({ podcast, podcastId }: Props) {
       <Separator />
       <Subtitle>
         <DescriptionTitle>Description:</DescriptionTitle>
-        <PodcastDescription>{removeHtmlTags(podcast.description)}</PodcastDescription>
+        <PodcastDescription>
+          {removeHtmlTags(podcast.description)}
+        </PodcastDescription>
       </Subtitle>
     </Card>
   );
