@@ -24,6 +24,12 @@ Run build:
 npm run build
 ```
 
+serve build:
+
+```bash
+npm run start
+```
+
 Format code:
 
 ```bash
