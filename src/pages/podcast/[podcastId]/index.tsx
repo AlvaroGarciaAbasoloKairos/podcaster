@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PodcastCard } from '@/components/PodcastCard';
 import { toPodcastEpisodePath } from '@/lib/paths';
 import { formatTime } from '@/lib/utils';
-import { HeaderLayout } from '@/components/headerLayout';
+import { HeaderLayout } from '@/components/HeaderLayout';
 import usePodcast from '@/lib/usePodcast';
 import { useRouter } from 'next/router';
 

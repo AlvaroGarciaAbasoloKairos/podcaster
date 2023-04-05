@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import usePodcasts from '@/lib/usePodcasts';
 import Link from 'next/link';
 import { toPodcastPath } from '@/lib/paths';
-import { HeaderLayout } from '@/components/headerLayout';
+import { HeaderLayout } from '@/components/HeaderLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -1,5 +1,5 @@
 import { PodcastCard } from '@/components/PodcastCard';
-import { HeaderLayout } from '@/components/headerLayout';
+import { HeaderLayout } from '@/components/HeaderLayout';
 import usePodcast from '@/lib/usePodcast';
 import { removeHtmlTags } from '@/lib/utils';
 import { useRouter } from 'next/router';
